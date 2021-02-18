@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+    <title>Apostle Risk UI Kit</title>
+    
+    <meta name="description" content="">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/ui.css"><!-- styles only for the ui kit (should not be used on production) -->
+  </head>
+  
+  <body>
+    <div class="uikit">
+      <main class="uikit__main">
+        
+        
+        <section id="bem" class="uikit__section">
+            <div class="uikit__subsection">
+              <div class="uikit__wysiwyg">
+                <h1>BEM naming</h1>
+                <p>BEM is a highly useful, powerful, and simple naming convention that makes front-end code easier to read and understand, easier to work with, easier to scale, more robust and explicit, and a lot more strict. You will not be surprised to hear that BEM is an abbreviation of the key elements of the methodology — Block, Element and Modifier.</p>
+              </div>
+            </div>
+            
+            <div id="bem-block" class="uikit__subsection">
+              <div class="uikit__wysiwyg">
+                <h2>Block</h2>
+                <p>Encapsulates a standalone entity that is meaningful on its own. While blocks can be nested and interact with each other, semantically they remain equal; there is no precedence or hierarchy. Holistic entities without DOM representation (such as controllers or models) can be blocks as well.</p>
+                <p>Block names may consist of Latin letters, digits, and dashes. To form a CSS class, add a short prefix for namespacing: <code>.block</code>.</p>
+              </div>
+              <pre class="uikit__source"><code>
+                &lt;div class="block"&gt;&lt;/div&gt;
+              </code></pre>
+            </div>
+            
+            <div id="bem-element" class="uikit__subsection">
+              <div class="uikit__wysiwyg">
+                <h2>Element</h2>
+                <p>Parts of a block and have no standalone meaning. Any element is semantically tied to its block.</p>
+                <p>Element names may consist of Latin letters, digits, dashes and underscores. CSS class is formed as block name plus two underscores plus element name: <code>.block__elem</code></p>
+              </div>
+              <pre class="uikit__source"><code>
+                &lt;div class="block"&gt;
+                  &lt;div class="block__elem"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+              </code></pre>
+            </div>
+            
+            <div id="bem-modifier" class="uikit__subsection">
+              <div class="uikit__wysiwyg">
+                <h2>Modifier</h2>
+                <p>Flags on blocks or elements. Use them to change appearance, behaviour or state.</p>
+                <p>Modifier names may consist of Latin letters, digits, dashes. CSS class is formed as block’s or element’s name plus two underscore: <code>.block--mod</code> or <code>.block__elem--mod</code>.</p>
+              </div>
+              <pre class="uikit__source"><code>
+                &lt;div class="block block--primary"&gt;
+                  &lt;div class="block__elem block__elem--active"&gt;&lt;/div&gt;
+                  &lt;div class="block__elem"&gt;&lt;/div&gt;
+                  &lt;div class="block__elem"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+              </code></pre>
+            </div>
+        </section>
+        
+        
+        <section id="grid" class="uikit__section">
+          <div class="uikit__subsection">
+            <div class="uikit__wysiwyg">
+              <h1>Flexbox grid</h1>
+              <p>Flexbox grid helps to build layouts of all shapes and sizes thanks to a twelve column system.</p>
+            </div>
+          </div>
+          
+          <div id="grid-rows-and-cols" class="uikit__subsection">
+            <div class="uikit__wysiwyg">
+              <h2>Rows and columns</h2>
+              <p>Grid system uses a series of containers, rows, and columns to layout and align content. It’s built with flexbox and is fully responsive.</p>
+            </div>
+            <div class="uikit__example">
+              <div class="grid-row">
+                <div class="grid-col">
+                  <div class="uikit__coldemo"></div>
+                </div>
+                <div class="grid-col">
+                  <div class="uikit__coldemo"></div>
+                </div>
+                <div class="grid-col">
+                  <div class="uikit__coldemo"></div>
+                </div>
+                <div class="grid-col">
+                  <div class="uikit__coldemo"></div>
+                </div>
+              </div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+          </div>
+          
+          <div id="grid-var-width-content" class="uikit__subsection">
+            <div class="uikit__wysiwyg">
+              <h2>Variable width content</h2>
+              <p>Use <code>grid-col--auto</code> class to size columns based on the natural width of their content.</p>
+            </div>
+            <div class="uikit__example">
+              <div class="grid-row">
+                <div class="grid-col">
+                  <div class="uikit__coldemo"></div>
+                </div>
+                <div class="grid-col grid-col--auto">
+                  <div class="uikit__coldemo">auto</div>
+                </div>
+                <div class="grid-col">
+                  <div class="uikit__coldemo"></div>
+                </div>
+                <div class="grid-col">
+                  <div class="uikit__coldemo"></div>
+                </div>
+              </div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+          </div>
+          
+          <div id="grid-vertical-alignment" class="uikit__subsection">
+            <div class="uikit__wysiwyg">
+              <h2>Vertical alignment</h2>
+              <p>There are 3 different vertical alignment options: top (default), center and bottom.</p>
+            </div>
+            <div class="uikit__example">
+              <div class="grid-row">
+                <div class="grid-col">
+                  <div class="uikit__coldemo" style="height: 48px;"></div>
+                </div>
+                <div class="grid-col">
+                  <div class="uikit__coldemo"></div>
+                </div>
+                <div class="grid-col">
+                  <div class="uikit__coldemo" style="height: 64px;"></div>
+                </div>
+              </div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            <div class="uikit__example">
+              <div class="grid-row grid-row--aic">
+                <div class="grid-col">
+                  <div class="uikit__coldemo" style="height: 48px;"></div>
+                </div>
+                <div class="grid-col">
+                  <div class="uikit__coldemo"></div>
+                </div>
+                <div class="grid-col">
+                  <div class="uikit__coldemo" style="height: 64px;"></div>
+                </div>
+              </div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            <div class="uikit__example">
+              <div class="grid-cont">
+                <div class="grid-row grid-row--aib">
+                  <div class="grid-col">
+                    <div class="uikit__coldemo" style="height: 48px;"></div>
+                  </div>
+                  <div class="grid-col">
+                    <div class="uikit__coldemo"></div>
+                  </div>
+                  <div class="grid-col">
+                    <div class="uikit__coldemo" style="height: 64px;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+          </div>
+          
+          <div id="grid-horizontal-alignment" class="uikit__subsection">
+            <div class="uikit__wysiwyg">
+              <h2>Horizontal alignment</h2>
+              <p>There are 5 different horizontal alignment options: start (default), center, end, space-around and space-beetween.</p>
+            </div>
+            <div class="uikit__example">
+              <div class="grid-row">
+                <div class="grid-col grid-col--3">
+                  <div class="uikit__coldemo"></div>
+                </div>
+                <div class="grid-col grid-col--3">
+                  <div class="uikit__coldemo"></div>
+                </div>
+                <div class="grid-col grid-col--3">
+                  <div class="uikit__coldemo"></div>
+                </div>
+              </div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            <div class="uikit__example">
+              <div class="grid-row grid-row--jcc">
+                <div class="grid-col grid-col--3">
+                  <div class="uikit__coldemo"></div>
+                </div>
+                <div class="grid-col grid-col--3">
+                  <div class="uikit__coldemo"></div>
+                </div>
+                <div class="grid-col grid-col--3">
+                  <div class="uikit__coldemo"></div>
+                </div>
+              </div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            <div class="uikit__example">
+              <div class="grid-row grid-row--jce">
+                <div class="grid-col grid-col--3">
+                  <div class="uikit__coldemo"></div>
+                </div>
+                <div class="grid-col grid-col--3">
+                  <div class="uikit__coldemo"></div>
+                </div>
+                <div class="grid-col grid-col--3">
+                  <div class="uikit__coldemo"></div>
+                </div>
+              </div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            <div class="uikit__example">
+              <div class="grid-row grid-row--jca">
+                <div class="grid-col grid-col--3">
+                  <div class="uikit__coldemo"></div>
+                </div>
+                <div class="grid-col grid-col--3">
+                  <div class="uikit__coldemo"></div>
+                </div>
+                <div class="grid-col grid-col--3">
+                  <div class="uikit__coldemo"></div>
+                </div>
+              </div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            <div class="uikit__example">
+              <div class="grid-row grid-row--jcb">
+                <div class="grid-col grid-col--3">
+                  <div class="uikit__coldemo"></div>
+                </div>
+                <div class="grid-col grid-col--3">
+                  <div class="uikit__coldemo"></div>
+                </div>
+                <div class="grid-col grid-col--3">
+                  <div class="uikit__coldemo"></div>
+                </div>
+              </div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+          </div>
+          
+          <div id="grid-disabled-gutters" class="uikit__subsection">
+            <div class="uikit__wysiwyg">
+              <h2>Disabled and small gutters</h2>
+              <p>The gutters between columns in our predefined grid classes can be removed with <code>grid-row--nog</code> class. This removes the negative margins from rows and the horizontal padding from all immediate children columns.</p>
+            </div>
+            <div class="uikit__example">
+              <div class="grid-row grid-row--nog">
+                <div class="grid-col">
+                  <div class="uikit__coldemo"></div>
+                </div>
+                <div class="grid-col">
+                  <div class="uikit__coldemo"></div>
+                </div>
+                <div class="grid-col">
+                  <div class="uikit__coldemo"></div>
+                </div>
+              </div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            <div class="uikit__wysiwyg">
+              <p>The gutters between columns in our predefined grid classes can be reduced with <code>grid-row--smg</code> class. This makes the negative margins of the rows smaller and the horizontal padding from all immediate children columns.</p>
+            </div>
+            <div class="uikit__example">
+              <div class="grid-row grid-row--smg">
+                <div class="grid-col">
+                  <div class="uikit__coldemo"></div>
+                </div>
+                <div class="grid-col">
+                  <div class="uikit__coldemo"></div>
+                </div>
+                <div class="grid-col">
+                  <div class="uikit__coldemo"></div>
+                </div>
+              </div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+          </div>
+        </section>
+        
+        
+        <section id="page" class="uikit__section active">
+          <div class="uikit__subsection">
+            <div class="uikit__wysiwyg">
+              <h1>Page layout</h1>
+            </div>
+          </div>
+          
+          <div id="page-header" class="uikit__subsection">
+            <div class="uikit__wysiwyg">
+              <h2>Overhead</h2>
+              <p>Overhead includes 2 components: main-nav and user-nav.</p>
+            </div>
+            <div class="uikit__example">
+              <div class="overhead">
+                <div class="grid-row">
+                  <div class="grid-col grid-col--auto">
+                    <nav class="main-nav">
+                      <div class="main-nav__item">
+                        <a href="#" class="main-nav__link">Projects</a>
+                      </div>
+                      <div class="main-nav__item">
+                        <a href="#" class="main-nav__link" onclick="this.nextElementSibling.classList.toggle('visible'); return false;">Configure</a>
+                        <div class="main-nav__dropdown">
+                          <div class="main-nav__subitem">
+                            <a href="#" class="main-nav__sublink"><span class="main-nav__icon"><img src="img/main-nav/list.svg" alt=""></span>Libraries</a>
+                          </div>
+                          <div class="main-nav__subitem">
+                            <a href="#" class="main-nav__sublink"><span class="main-nav__icon"><img src="img/main-nav/units.svg" alt=""></span>Units</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="main-nav__item">
+                        <a href="#" class="main-nav__link">Users</a>
+                      </div>
+                    </nav>
+                  </div>
+                  
+                  <div class="grid-col"></div>
+                  
+                  <div class="grid-col grid-col--auto">
+                    <nav class="user-nav">
+                      <a href="#" class="user-nav__toggle" onclick="this.nextElementSibling.classList.toggle('visible'); return false;">Nina M.</a>
+                      <div class="user-nav__dropdown">
+                        <div class="user-nav__avatar">NM</div>
+                        <div class="user-nav__name">Nina Martinez</div>
+                        <div class="user-nav__email">user@dreamten.com</div>
+                        <div class="user-nav__subitem">
+                          <a href="#" class="user-nav__sublink"><span class="user-nav__icon"><img src="img/user-nav/logs.svg" alt=""></span>Logs</a>
+                        </div>
+                        <div class="user-nav__subitem">
+                          <a href="#" class="user-nav__sublink"><span class="user-nav__icon"><img src="img/user-nav/audit.svg" alt=""></span>System Audit Log</a>
+                        </div>
+                        <div class="user-nav__subitem">
+                          <a href="#" class="user-nav__sublink"><span class="user-nav__icon"><img src="img/user-nav/logout.svg" alt=""></span>Log Out</a>
+                        </div>
+                        <div class="user-nav__version">v1.0.0.0</div>
+                      </div>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+          </div>
+          
+          <div id="page-header" class="uikit__subsection">
+            <div class="uikit__wysiwyg">
+              <h2>Header</h2>
+              <p>Default header includes 4 components: logo, headline, version-nav and actions-nav.</p>
+            </div>
+            <div class="uikit__example">
+              <header class="header">
+                <div class="grid-row grid-row--aic">
+                  <div class="grid-col grid-col--auto">
+                    <a href="#"><img src="img/logo-small.svg" alt=""></a>
+                  </div>
+                  
+                  <div class="grid-col grid-col--auto">
+                    <h1 class="headline">Black-Scholes with Data Partition</h1>
+                  </div>
+                  
+                  <div class="grid-col grid-col--auto">
+                    <nav class="version-nav">
+                      <button type="button" class="version-nav__button">
+                        <span>5.0</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 12 12"><path d="M10.293,3.293,6,7.586,1.707,3.293A1,1,0,0,0,.293,4.707l5,5a1,1,0,0,0,1.414,0l5-5a1,1,0,1,0-1.414-1.414Z" fill="#DFDFDF"></path></svg>
+                      </button>
+                    </nav>
+                  </div>
+                  
+                  <div class="grid-col"></div>
+                  
+                  <nav class="actions-nav">
+                    <div class="actions-nav__item">
+                      <a href="#" class="actions-nav__link">
+                        <span class="actions-nav__button"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#DFDFDF" d="M12,6c1.654,0,3-1.346,3-3s-1.346-3-3-3S9,1.346,9,3c0,0.223,0.029,0.439,0.075,0.649l-3.22,2.012 C5.343,5.254,4.704,5,4,5C2.346,5,1,6.346,1,8s1.346,3,3,3c0.704,0,1.343-0.254,1.855-0.661l3.22,2.012C9.029,12.561,9,12.777,9,13 c0,1.654,1.346,3,3,3s3-1.346,3-3s-1.346-3-3-3c-0.704,0-1.343,0.254-1.855,0.661l-3.22-2.012C6.971,8.439,7,8.223,7,8 S6.971,7.561,6.925,7.351l3.22-2.012C10.657,5.746,11.296,6,12,6z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 12 12"><path d="M10.293,3.293,6,7.586,1.707,3.293A1,1,0,0,0,.293,4.707l5,5a1,1,0,0,0,1.414,0l5-5a1,1,0,1,0-1.414-1.414Z" fill="#DFDFDF"></path></svg></span>
+                        <span class="actions-nav__label">Share</span>
+                      </a>
+                    </div>
+                    <div class="actions-nav__item">
+                      <a href="#" class="actions-nav__link">
+                        <span class="actions-nav__button"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 16 16"><path fill="#DFDFDF" d="M13,7.1c0,0,0-0.1,0-0.1c0-2.8-2.2-5-5-5C5.5,2,3.4,3.8,3.1,6.3C1.3,6.9,0,8.5,0,10.5C0,13,2,15,4.5,15 c1.7,0,5.9,0,7.5,0c2.2,0,4-1.8,4-4C16,9.1,14.7,7.6,13,7.1z M8,13L4,9h3V6h2v3h3L8,13z"></path></svg></span>
+                        <span class="actions-nav__label">Download</span>
+                      </a>
+                    </div>
+                    <div class="actions-nav__divider"></div>
+                    <div class="actions-nav__item">
+                      <a href="#" class="actions-nav__link">
+                        <span class="actions-nav__button"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#DFDFDF" d="M11.7,0.3C11.5,0.1,11.3,0,11,0h-1v3c0,0.6-0.4,1-1,1H4C3.4,4,3,3.6,3,3V0H1C0.4,0,0,0.4,0,1v14 c0,0.6,0.4,1,1,1h14c0.6,0,1-0.4,1-1V5c0-0.3-0.1-0.5-0.3-0.7L11.7,0.3z M13,14H3v-3c0-0.6,0.4-1,1-1h8c0.6,0,1,0.4,1,1V14z"></path><rect data-color="color-2" x="7" fill="#DFDFDF" width="2" height="3"></rect></svg><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 12 12"><path d="M10.293,3.293,6,7.586,1.707,3.293A1,1,0,0,0,.293,4.707l5,5a1,1,0,0,0,1.414,0l5-5a1,1,0,1,0-1.414-1.414Z" fill="#DFDFDF"></path></svg></span>
+                        <span class="actions-nav__label">Save</span>
+                      </a>
+                    </div>
+                    <div class="actions-nav__item">
+                      <a href="#" class="actions-nav__link">
+                        <span class="actions-nav__button"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M2.783.088A.5.5,0,0,0,2,.5v11a.5.5,0,0,0,.268.442A.49.49,0,0,0,2.5,12a.5.5,0,0,0,.283-.088l8-5.5a.5.5,0,0,0,0-.824Z" fill="#DFDFDF"></path></svg></span>
+                        <span class="actions-nav__label">Run</span>
+                      </a>
+                    </div>
+                    <div class="actions-nav__divider"></div>
+                    <div class="actions-nav__item">
+                      <div class="actions-nav__toggle">
+                        <input type="checkbox" checked>
+                        <span></span>
+                      </div>
+                      <span class="actions-nav__label">Edit</span>
+                    </div>
+                  </nav>
+                </div>
+              </header>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            
+            <div class="uikit__wysiwyg">
+              <p>Alternative header contains logo, headline and actions-nav.</p>
+            </div>
+            <div class="uikit__example">
+              <header class="header">
+                <div class="grid-row grid-row--aic">
+                  <div class="grid-col grid-col--auto">
+                    <a href="#"><img src="img/logo-small.svg" alt=""></a>
+                  </div>
+                  
+                  <div class="grid-col grid-col--auto">
+                    <h1 class="headline">Configure - Libraries</h1>
+                  </div>
+                  
+                  <div class="grid-col"></div>
+                  
+                  <nav class="actions-nav">
+                    <div class="actions-nav__item">
+                      <a href="#" class="actions-nav__link">
+                        <span class="actions-nav__button"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#DFDFDF" d="M12,6c1.654,0,3-1.346,3-3s-1.346-3-3-3S9,1.346,9,3c0,0.223,0.029,0.439,0.075,0.649l-3.22,2.012 C5.343,5.254,4.704,5,4,5C2.346,5,1,6.346,1,8s1.346,3,3,3c0.704,0,1.343-0.254,1.855-0.661l3.22,2.012C9.029,12.561,9,12.777,9,13 c0,1.654,1.346,3,3,3s3-1.346,3-3s-1.346-3-3-3c-0.704,0-1.343,0.254-1.855,0.661l-3.22-2.012C6.971,8.439,7,8.223,7,8 S6.971,7.561,6.925,7.351l3.22-2.012C10.657,5.746,11.296,6,12,6z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 12 12"><path d="M10.293,3.293,6,7.586,1.707,3.293A1,1,0,0,0,.293,4.707l5,5a1,1,0,0,0,1.414,0l5-5a1,1,0,1,0-1.414-1.414Z" fill="#DFDFDF"></path></svg></span>
+                        <span class="actions-nav__label">Share</span>
+                      </a>
+                    </div>
+                    <div class="actions-nav__item">
+                      <a href="#" class="actions-nav__link">
+                        <span class="actions-nav__button"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 16 16"><path fill="#DFDFDF" d="M13,7.1c0,0,0-0.1,0-0.1c0-2.8-2.2-5-5-5C5.5,2,3.4,3.8,3.1,6.3C1.3,6.9,0,8.5,0,10.5C0,13,2,15,4.5,15 c1.7,0,5.9,0,7.5,0c2.2,0,4-1.8,4-4C16,9.1,14.7,7.6,13,7.1z M8,13L4,9h3V6h2v3h3L8,13z"></path></svg></span>
+                        <span class="actions-nav__label">Download</span>
+                      </a>
+                    </div>
+                    <div class="actions-nav__item">
+                      <a href="#" class="actions-nav__link">
+                        <span class="actions-nav__button"><img src="img/actions-nav/compile.svg" alt=""></span>
+                        <span class="actions-nav__label">Compile</span>
+                      </a>
+                    </div>
+                    <div class="actions-nav__divider"></div>
+                    <div class="actions-nav__item">
+                      <a href="#" class="actions-nav__link">
+                        <span class="actions-nav__button"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#DFDFDF" d="M4.5,4.5c1.9-1.9,5.1-1.9,7,0c0.7,0.7,1.2,1.7,1.4,2.7l2-0.3C14.7,5.4,14,4.1,13,3.1c-2.7-2.7-7.1-2.7-9.9,0 L0.9,0.9L0.2,7.3l6.4-0.7L4.5,4.5z"></path><path fill="#DFDFDF" d="M15.8,8.7L9.4,9.4l2.1,2.1c-1.9,1.9-5.1,1.9-7,0c-0.7-0.7-1.2-1.7-1.4-2.7l-2,0.3 C1.3,10.6,2,11.9,3,12.9c1.4,1.4,3.1,2,4.9,2c1.8,0,3.6-0.7,4.9-2l2.2,2.2L15.8,8.7z"></path></svg></span>
+                        <span class="actions-nav__label">Refresh</span>
+                      </a>
+                    </div>
+                  </nav>
+                </div>
+              </header>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            
+            <div class="uikit__wysiwyg">
+              <h2>Sidebar</h2>
+              <p>Sidebar includes 3 components: sidebar-nav, sidebar-search and variables.</p>
+            </div>
+            <div class="uikit__example">
+              <div class="sidebar">
+                <nav class="sidebar-nav">
+                  <a href="#" class="sidebar-nav__link sidebar-nav__link--active">
+                    <span class="sidebar-nav__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" viewBox="0 0 20 18"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1.87104,0 C0.67341,2.40992 0,5.12632 0,8 C0,10.8737 0.67341,13.5901 1.87104,16 M16.0001,16 C17.1977,13.5901 17.8711,10.8737 17.8711,8 C17.8711,5.12632 17.1977,2.40992 16.0001,0 M6,5 L7.2457,5 C7.6922,5 8.0846,5.29598 8.2072,5.72528 L9.7928,11.2747 C9.9154,11.704 10.3078,12 10.7543,12 L12,12 M13,5 L12.9199,5 C12.336,5 11.7813,5.25513 11.4014,5.69842 L6.59864,11.3016 C6.21868,11.7449 5.66398,12 5.08013,12 L5,12" transform="translate(1 1)"/></svg></span>
+                    <span class="sidebar-nav__label">Variables</span>
+                  </a>
+                  <a href="#" class="sidebar-nav__link">
+                    <span class="sidebar-nav__icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14"><path fill="currentColor" fill-rule="evenodd" d="M108.316216,8.05158219 C108.840217,8.22622528 109.123317,8.79252288 108.948717,9.31644215 L104.948691,21.3160174 C104.774051,21.8398966 104.20773,22.1230854 103.68378,21.9483923 C103.159839,21.7737993 102.876679,21.2074217 103.051329,20.6835424 L107.051314,8.68401717 C107.226015,8.1600979 107.792315,7.8769491 108.316216,8.05158219 Z M101.707117,11.2930339 C102.097638,11.6835385 102.097638,12.3166834 101.707117,12.707188 L99.414214,14.9999673 L101.707117,17.2927766 C102.097638,17.6832611 102.097638,18.3164361 101.707117,18.7069206 C101.316587,19.0975051 100.683426,19.0975051 100.292895,18.7069206 L97.2928911,15.7070393 C96.9023696,15.3165547 96.9023696,14.6834198 97.2928911,14.2929152 L100.292895,11.2930339 C100.683426,10.9025294 101.316587,10.9025294 101.707117,11.2930339 Z M110.292919,11.2930339 C110.683419,10.9025294 111.31662,10.9025294 111.707121,11.2930339 L114.707125,14.2929152 C115.097625,14.6834198 115.097625,15.3165547 114.707125,15.7070393 L111.707121,18.7069206 C111.31662,19.0975051 110.683419,19.0975051 110.292919,18.7069206 C109.902418,18.3164361 109.902418,17.6832611 110.292919,17.2927766 L112.585822,14.9999673 L110.292919,12.707188 C109.902418,12.3166834 109.902418,11.6835385 110.292919,11.2930339 Z" transform="translate(-97 -8)"/></svg></span>
+                    <span class="sidebar-nav__label">Models</span>
+                  </a>
+                  <a href="#" class="sidebar-nav__link">
+                    <span class="sidebar-nav__icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill="currentColor" fill-rule="evenodd" d="M169,7 C169.55228,7 170,7.44772 170,8 L170,10.10125 C171.27009,8.80489 173.04052,8 175,8 C178.0494,8 180.641,9.94932 181.6014,12.66675 C181.7855,13.18747 181.5126,13.75879 180.9918,13.94284 C180.4711,14.12689 179.8998,13.85396 179.7157,13.33325 C179.0289,11.38991 177.1755,10 175,10 C173.36507,10 171.91204,10.78502 170.99935,12 L174,12 C174.55228,12 175,12.44772 175,13 C175,13.55228 174.55228,14 174,14 L169,14 C168.44772,14 168,13.55228 168,13 L168,8 C168,7.44772 168.44772,7 169,7 Z M169.00817,16.0572 C169.52888,15.8731 170.1002,16.146 170.28425,16.6668 C170.97112,18.6101 172.82453,20 175,20 C176.6349,20 178.088,19.215 179.0006,18 L176,18 C175.4477,18 175,17.5523 175,17 C175,16.4477 175.4477,16 176,16 L181,16 C181.2652,16 181.5196,16.1054 181.7071,16.2929 C181.8946,16.4804 182,16.7348 182,17 L182,22 C182,22.5523 181.5523,23 181,23 C180.4477,23 180,22.5523 180,22 L180,19.8987 C178.7299,21.1951 176.9595,22 175,22 C171.95059,22 169.35905,20.0507 168.39857,17.3332 C168.21452,16.8125 168.48745,16.2412 169.00817,16.0572 Z" transform="translate(-168 -7)"/></svg></span>
+                    <span class="sidebar-nav__label">Iterators</span>
+                  </a>
+                  <a href="#" class="sidebar-nav__link">
+                    <span class="sidebar-nav__icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18"><path fill="currentColor" fill-rule="evenodd" d="M243.50386,6.13175926 C243.81129,5.95608025 244.1887,5.95608025 244.4961,6.13175926 L246.2461,7.1317593 C246.7257,7.40576931 246.8923,8.01661933 246.6182,8.49613935 C246.3442,8.97565937 245.7334,9.14224938 245.2539,8.86823937 L244,8.15174934 L242.74614,8.86823937 C242.26662,9.14224938 241.65577,8.97565937 241.38176,8.49613935 C241.10775,8.01661933 241.27434,7.40576931 241.75386,7.1317593 L243.50386,6.13175926 Z M239.61824,9.5038594 C239.89225,9.98337942 239.72566,10.5942294 239.24614,10.8682395 L239.01556,10.9999995 L239.24614,11.1317595 C239.72566,11.4057695 239.89225,12.0166195 239.61824,12.4961395 C239.34423,12.9756595 238.73338,13.1422495 238.25386,12.8682395 L238,12.7231795 L238,12.9999995 C238,13.5522796 237.55228,13.9999996 237,13.9999996 C236.44772,13.9999996 236,13.5522796 236,12.9999995 L236,10.9999995 C236,10.7500094 236.09173,10.5214494 236.24336,10.3461394 C236.27802,10.3060294 236.31598,10.2685394 236.35699,10.2341094 C236.40754,10.1916294 236.46236,10.1540494 236.52071,10.1221294 L238.25386,9.13175938 C238.73338,8.85774937 239.34423,9.02433938 239.61824,9.5038594 Z M248.3818,9.5038594 C248.6558,9.02433938 249.2666,8.85774937 249.7461,9.13175938 L251.4793,10.1221194 C251.5376,10.1540494 251.5925,10.1916194 251.643,10.2341094 C251.8613,10.4175494 252,10.6925794 252,10.9999995 L252,12.9999995 C252,13.5522796 251.5523,13.9999996 251,13.9999996 C250.4477,13.9999996 250,13.5522796 250,12.9999995 L250,12.7231795 L249.7461,12.8682395 C249.2666,13.1422495 248.6558,12.9756595 248.3818,12.4961395 C248.1077,12.0166195 248.2743,11.4057695 248.7539,11.1317595 L248.9844,10.9999995 L248.7539,10.8682395 C248.2743,10.5942294 248.1077,9.98337942 248.3818,9.5038594 Z M241.38176,13.5038596 C241.65577,13.0243395 242.26662,12.8577495 242.74614,13.1317595 L244,13.8482496 L245.2539,13.1317595 C245.7334,12.8577495 246.3442,13.0243395 246.6182,13.5038596 C246.8923,13.9833796 246.7257,14.5942296 246.2461,14.8682396 L245,15.5802996 L245,16.9999997 C245,17.5522997 244.5523,17.9999997 244,17.9999997 C243.44772,17.9999997 243,17.5522997 243,16.9999997 L243,15.5802996 L241.75386,14.8682396 C241.27434,14.5942296 241.10775,13.9833796 241.38176,13.5038596 Z M237,15.9999997 C237.55228,15.9999997 238,16.4476997 238,16.9999997 L238,18.4196998 L239.24614,19.1317998 C239.72566,19.4057998 239.89225,20.0165998 239.61824,20.4960999 C239.34423,20.9756999 238.73338,21.1422999 238.25386,20.8681999 L236.50386,19.8681998 C236.19229,19.6901998 236,19.3588998 236,18.9999997 L236,16.9999997 C236,16.4476997 236.44772,15.9999997 237,15.9999997 Z M251,15.9999997 C251.5523,15.9999997 252,16.4476997 252,16.9999997 L252,18.9999997 C252,19.3588998 251.8077,19.6901998 251.4961,19.8681998 L249.7461,20.8681999 C249.2666,21.1422999 248.6558,20.9756999 248.3818,20.4960999 C248.1077,20.0165998 248.2743,19.4057998 248.7539,19.1317998 L250,18.4196998 L250,16.9999997 C250,16.4476997 250.4477,15.9999997 251,15.9999997 Z M241.38176,21.5038999 C241.65577,21.0242999 242.26662,20.8576999 242.74614,21.1317999 L243,21.2767999 L243,20.9999998 C243,20.4476999 243.44772,19.9999998 244,19.9999998 C244.5523,19.9999998 245,20.4476999 245,20.9999998 L245,21.2767999 L245.2539,21.1317999 C245.7334,20.8576999 246.3442,21.0242999 246.6182,21.5038999 C246.8923,21.9833999 246.7257,22.5941999 246.2461,22.8682 L244.5113,23.8596 C244.3617,23.9488 244.1868,23.9999998 244,23.9999998 C243.81316,23.9999998 243.63828,23.9488 243.48866,23.8596 L241.75386,22.8682 C241.27434,22.5941999 241.10775,21.9833999 241.38176,21.5038999 Z" transform="translate(-236 -6)"/></svg></span>
+                    <span class="sidebar-nav__label">Nodes</span>
+                  </a>
+                  <a href="#" class="sidebar-nav__link">
+                    <span class="sidebar-nav__icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="currentColor" fill-rule="evenodd" d="M318.296875,19.4296875 C318.685211,19.4296875 319,19.7444766 319,20.1328125 L319,20.1328125 L319,23.296875 C319,23.6852109 318.685211,24 318.296875,24 L318.296875,24 L314.675781,24 C314.287445,24 313.972656,23.6852109 313.972656,23.296875 L313.972656,23.296875 L313.972656,20.1328125 C313.972656,19.7444766 314.287445,19.4296875 314.675781,19.4296875 L314.675781,19.4296875 Z M305.324219,19.4296875 C305.712555,19.4296875 306.027344,19.7444766 306.027344,20.1328125 L306.027344,20.1328125 L306.027344,23.296875 C306.027344,23.6852109 305.712555,24 305.324219,24 L305.324219,24 L301.703125,24 C301.314789,24 301,23.6852109 301,23.296875 L301,23.296875 L301,20.1328125 C301,19.7444766 301.314789,19.4296875 301.703125,19.4296875 L301.703125,19.4296875 Z M311.828125,19.4296875 C312.216461,19.4296875 312.53125,19.7444766 312.53125,20.1328125 L312.53125,20.1328125 L312.53125,23.296875 C312.53125,23.6852109 312.216461,24 311.828125,24 L311.828125,24 L308.171875,24 C307.783539,24 307.46875,23.6852109 307.46875,23.296875 L307.46875,23.296875 L307.46875,20.1328125 C307.46875,19.7444766 307.783539,19.4296875 308.171875,19.4296875 L308.171875,19.4296875 Z M317.59375,20.8359375 L315.378906,20.8359375 L315.378906,22.59375 L317.59375,22.59375 L317.59375,20.8359375 Z M304.621094,20.8359375 L302.40625,20.8359375 L302.40625,22.59375 L304.621094,22.59375 L304.621094,20.8359375 Z M311.125,20.8359375 L308.875,20.8359375 L308.875,22.59375 L311.125,22.59375 L311.125,20.8359375 Z M311.828125,6 C312.216461,6 312.53125,6.31478906 312.53125,6.703125 L312.53125,6.703125 L312.53125,9.8671875 C312.53125,10.2555234 312.216461,10.5703125 311.828125,10.5703125 L311.828125,10.5703125 L310.703125,10.5703125 L310.703125,13.7695312 L314.394531,13.7695312 C315.945344,13.7695312 317.207031,15.0312187 317.207031,16.5820312 L317.207031,16.5820312 L317.207031,17.2797422 C317.207031,17.6680781 316.892242,17.9828672 316.503906,17.9828672 C316.11557,17.9828672 315.800781,17.6680781 315.800781,17.2797422 L315.800781,17.2797422 L315.800781,16.5820312 C315.800781,15.806625 315.169938,15.1757812 314.394531,15.1757812 L314.394531,15.1757812 L310.703125,15.1757812 L310.703125,17.2851562 C310.703125,17.6734922 310.388336,17.9882812 310,17.9882812 C309.611664,17.9882812 309.296875,17.6734922 309.296875,17.2851562 L309.296875,17.2851562 L309.296875,15.1757812 L305.605469,15.1757812 C304.830062,15.1757812 304.199219,15.806625 304.199219,16.5820312 L304.199219,16.5820312 L304.199219,17.2797422 C304.199219,17.6680781 303.88443,17.9828672 303.496094,17.9828672 C303.107758,17.9828672 302.792969,17.6680781 302.792969,17.2797422 L302.792969,17.2797422 L302.792969,16.5820312 C302.792969,15.0312187 304.054656,13.7695312 305.605469,13.7695312 L305.605469,13.7695312 L309.296875,13.7695312 L309.296875,10.5703125 L308.171875,10.5703125 C307.783539,10.5703125 307.46875,10.2555234 307.46875,9.8671875 L307.46875,9.8671875 L307.46875,6.703125 C307.46875,6.31478906 307.783539,6 308.171875,6 L308.171875,6 Z M311.125,7.40625 L308.875,7.40625 L308.875,9.1640625 L311.125,9.1640625 L311.125,7.40625 Z" transform="rotate(-90 156.5 162.5)"/></svg></span>
+                    <span class="sidebar-nav__label">Graphs</span>
+                  </a>
+                </nav>
+                
+                <div class="sidebar-search">
+                  <div class="grid-row grid-row--smg">
+                    <div class="grid-col">
+                      <input type="text" placeholder="Search" class="form-input sidebar-search__input">
+                    </div>
+                    <div class="grid-col grid-col--auto">
+                      <button type="button" class="sidebar-search__button"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill="#DFDFDF" d="M15,7H9V1c0-0.6-0.4-1-1-1S7,0.4,7,1v6H1C0.4,7,0,7.4,0,8s0.4,1,1,1h6v6c0,0.6,0.4,1,1,1s1-0.4,1-1V9h6 c0.6,0,1-0.4,1-1S15.6,7,15,7z"></path></svg></button>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                <div class="variables">
+                  <div class="variables__item">
+                    <div class="variables__icon"></div>
+                    <div>As Of Date <span class="variables__version">8.0</span></div>
+                    <div class="variables__drag"></div>
+                    <div class="variables__actions">
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" style="transform: rotate(180deg);"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                      <span></span>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><path d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M9,12H7V7h2V12z M8,6C7.4,6,7,5.6,7,5s0.4-1,1-1 s1,0.4,1,1S8.6,6,8,6z"></path></svg></a>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M9.8,3.613,10.95,2.464,9.536,1.05,8.387,2.2A4.443,4.443,0,0,0,7,1.62V0H5V1.62A4.443,4.443,0,0,0,3.613,2.2L2.464,1.05,1.05,2.464,2.2,3.613A4.443,4.443,0,0,0,1.62,5H0V7H1.62A4.443,4.443,0,0,0,2.2,8.387L1.05,9.536,2.464,10.95,3.613,9.8A4.443,4.443,0,0,0,5,10.38V12H7V10.38A4.443,4.443,0,0,0,8.387,9.8L9.536,10.95,10.95,9.536,9.8,8.387A4.443,4.443,0,0,0,10.38,7H12V5H10.38A4.443,4.443,0,0,0,9.8,3.613ZM6,8A2,2,0,1,1,8,6,2,2,0,0,1,6,8Z"></path></svg></a>
+                    </div>
+                  </div>
+                  <div class="variables__item">
+                    <div class="variables__icon variables__icon--alt variables__icon--opened"></div>
+                    <div>Black Scholes Option Pricing <span class="variables__version">1.0</span></div>
+                    <div class="variables__actions">
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" style="transform: rotate(180deg);"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                      <span></span>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><path d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M9,12H7V7h2V12z M8,6C7.4,6,7,5.6,7,5s0.4-1,1-1 s1,0.4,1,1S8.6,6,8,6z"></path></svg></a>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M9.8,3.613,10.95,2.464,9.536,1.05,8.387,2.2A4.443,4.443,0,0,0,7,1.62V0H5V1.62A4.443,4.443,0,0,0,3.613,2.2L2.464,1.05,1.05,2.464,2.2,3.613A4.443,4.443,0,0,0,1.62,5H0V7H1.62A4.443,4.443,0,0,0,2.2,8.387L1.05,9.536,2.464,10.95,3.613,9.8A4.443,4.443,0,0,0,5,10.38V12H7V10.38A4.443,4.443,0,0,0,8.387,9.8L9.536,10.95,10.95,9.536,9.8,8.387A4.443,4.443,0,0,0,10.38,7H12V5H10.38A4.443,4.443,0,0,0,9.8,3.613ZM6,8A2,2,0,1,1,8,6,2,2,0,0,1,6,8Z"></path></svg></a>
+                    </div>
+                  </div>
+                  <div class="variables__group">
+                    <div class="variables__item">
+                      <div class="variables__icon"></div>
+                      <div>Call Put <span class="variables__version">3.0</span></div>
+                      <div class="variables__drag"></div>
+                      <div class="variables__actions">
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" style="transform: rotate(180deg);"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                        <span></span>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><path d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M9,12H7V7h2V12z M8,6C7.4,6,7,5.6,7,5s0.4-1,1-1 s1,0.4,1,1S8.6,6,8,6z"></path></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M9.8,3.613,10.95,2.464,9.536,1.05,8.387,2.2A4.443,4.443,0,0,0,7,1.62V0H5V1.62A4.443,4.443,0,0,0,3.613,2.2L2.464,1.05,1.05,2.464,2.2,3.613A4.443,4.443,0,0,0,1.62,5H0V7H1.62A4.443,4.443,0,0,0,2.2,8.387L1.05,9.536,2.464,10.95,3.613,9.8A4.443,4.443,0,0,0,5,10.38V12H7V10.38A4.443,4.443,0,0,0,8.387,9.8L9.536,10.95,10.95,9.536,9.8,8.387A4.443,4.443,0,0,0,10.38,7H12V5H10.38A4.443,4.443,0,0,0,9.8,3.613ZM6,8A2,2,0,1,1,8,6,2,2,0,0,1,6,8Z"></path></svg></a>
+                      </div>
+                    </div>
+                    <div class="variables__item">
+                      <div class="variables__icon"></div>
+                      <div>Expiration Date <span class="variables__version">1.0</span></div>
+                      <div class="variables__drag"></div>
+                      <div class="variables__actions">
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" style="transform: rotate(180deg);"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                        <span></span>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><path d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M9,12H7V7h2V12z M8,6C7.4,6,7,5.6,7,5s0.4-1,1-1 s1,0.4,1,1S8.6,6,8,6z"></path></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M9.8,3.613,10.95,2.464,9.536,1.05,8.387,2.2A4.443,4.443,0,0,0,7,1.62V0H5V1.62A4.443,4.443,0,0,0,3.613,2.2L2.464,1.05,1.05,2.464,2.2,3.613A4.443,4.443,0,0,0,1.62,5H0V7H1.62A4.443,4.443,0,0,0,2.2,8.387L1.05,9.536,2.464,10.95,3.613,9.8A4.443,4.443,0,0,0,5,10.38V12H7V10.38A4.443,4.443,0,0,0,8.387,9.8L9.536,10.95,10.95,9.536,9.8,8.387A4.443,4.443,0,0,0,10.38,7H12V5H10.38A4.443,4.443,0,0,0,9.8,3.613ZM6,8A2,2,0,1,1,8,6,2,2,0,0,1,6,8Z"></path></svg></a>
+                      </div>
+                    </div>
+                    <div class="variables__item">
+                      <div class="variables__icon"></div>
+                      <div>IR <span class="variables__version">1.0</span></div>
+                      <div class="variables__drag"></div>
+                      <div class="variables__actions">
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" style="transform: rotate(180deg);"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                        <span></span>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><path d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M9,12H7V7h2V12z M8,6C7.4,6,7,5.6,7,5s0.4-1,1-1 s1,0.4,1,1S8.6,6,8,6z"></path></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M9.8,3.613,10.95,2.464,9.536,1.05,8.387,2.2A4.443,4.443,0,0,0,7,1.62V0H5V1.62A4.443,4.443,0,0,0,3.613,2.2L2.464,1.05,1.05,2.464,2.2,3.613A4.443,4.443,0,0,0,1.62,5H0V7H1.62A4.443,4.443,0,0,0,2.2,8.387L1.05,9.536,2.464,10.95,3.613,9.8A4.443,4.443,0,0,0,5,10.38V12H7V10.38A4.443,4.443,0,0,0,8.387,9.8L9.536,10.95,10.95,9.536,9.8,8.387A4.443,4.443,0,0,0,10.38,7H12V5H10.38A4.443,4.443,0,0,0,9.8,3.613ZM6,8A2,2,0,1,1,8,6,2,2,0,0,1,6,8Z"></path></svg></a>
+                      </div>
+                    </div>
+                    <div class="variables__item">
+                      <div class="variables__icon"></div>
+                      <div>Strike <span class="variables__version">1.0</span></div>
+                      <div class="variables__drag"></div>
+                      <div class="variables__actions">
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" style="transform: rotate(180deg);"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                        <span></span>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><path d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M9,12H7V7h2V12z M8,6C7.4,6,7,5.6,7,5s0.4-1,1-1 s1,0.4,1,1S8.6,6,8,6z"></path></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M9.8,3.613,10.95,2.464,9.536,1.05,8.387,2.2A4.443,4.443,0,0,0,7,1.62V0H5V1.62A4.443,4.443,0,0,0,3.613,2.2L2.464,1.05,1.05,2.464,2.2,3.613A4.443,4.443,0,0,0,1.62,5H0V7H1.62A4.443,4.443,0,0,0,2.2,8.387L1.05,9.536,2.464,10.95,3.613,9.8A4.443,4.443,0,0,0,5,10.38V12H7V10.38A4.443,4.443,0,0,0,8.387,9.8L9.536,10.95,10.95,9.536,9.8,8.387A4.443,4.443,0,0,0,10.38,7H12V5H10.38A4.443,4.443,0,0,0,9.8,3.613ZM6,8A2,2,0,1,1,8,6,2,2,0,0,1,6,8Z"></path></svg></a>
+                      </div>
+                    </div>
+                    <div class="variables__item">
+                      <div class="variables__icon"></div>
+                      <div>Dividend Yield <span class="variables__version">1.0</span></div>
+                      <div class="variables__drag"></div>
+                      <div class="variables__actions">
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" style="transform: rotate(180deg);"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                        <span></span>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><path d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M9,12H7V7h2V12z M8,6C7.4,6,7,5.6,7,5s0.4-1,1-1 s1,0.4,1,1S8.6,6,8,6z"></path></svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M9.8,3.613,10.95,2.464,9.536,1.05,8.387,2.2A4.443,4.443,0,0,0,7,1.62V0H5V1.62A4.443,4.443,0,0,0,3.613,2.2L2.464,1.05,1.05,2.464,2.2,3.613A4.443,4.443,0,0,0,1.62,5H0V7H1.62A4.443,4.443,0,0,0,2.2,8.387L1.05,9.536,2.464,10.95,3.613,9.8A4.443,4.443,0,0,0,5,10.38V12H7V10.38A4.443,4.443,0,0,0,8.387,9.8L9.536,10.95,10.95,9.536,9.8,8.387A4.443,4.443,0,0,0,10.38,7H12V5H10.38A4.443,4.443,0,0,0,9.8,3.613ZM6,8A2,2,0,1,1,8,6,2,2,0,0,1,6,8Z"></path></svg></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="variables__item">
+                    <div class="variables__icon"></div>
+                    <div>Borrow Rate <span class="variables__version">1.0</span></div>
+                    <div class="variables__drag"></div>
+                    <div class="variables__actions">
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" style="transform: rotate(180deg);"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                      <span></span>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><path d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M9,12H7V7h2V12z M8,6C7.4,6,7,5.6,7,5s0.4-1,1-1 s1,0.4,1,1S8.6,6,8,6z"></path></svg></a>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M9.8,3.613,10.95,2.464,9.536,1.05,8.387,2.2A4.443,4.443,0,0,0,7,1.62V0H5V1.62A4.443,4.443,0,0,0,3.613,2.2L2.464,1.05,1.05,2.464,2.2,3.613A4.443,4.443,0,0,0,1.62,5H0V7H1.62A4.443,4.443,0,0,0,2.2,8.387L1.05,9.536,2.464,10.95,3.613,9.8A4.443,4.443,0,0,0,5,10.38V12H7V10.38A4.443,4.443,0,0,0,8.387,9.8L9.536,10.95,10.95,9.536,9.8,8.387A4.443,4.443,0,0,0,10.38,7H12V5H10.38A4.443,4.443,0,0,0,9.8,3.613ZM6,8A2,2,0,1,1,8,6,2,2,0,0,1,6,8Z"></path></svg></a>
+                    </div>
+                  </div>
+                  <div class="variables__item">
+                    <div class="variables__icon"></div>
+                    <div>Borrow Rate Volatility <span class="variables__version">1.0</span></div>
+                    <div class="variables__drag"></div>
+                    <div class="variables__actions">
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" style="transform: rotate(180deg);"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                      <span></span>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><path d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M9,12H7V7h2V12z M8,6C7.4,6,7,5.6,7,5s0.4-1,1-1 s1,0.4,1,1S8.6,6,8,6z"></path></svg></a>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M9.8,3.613,10.95,2.464,9.536,1.05,8.387,2.2A4.443,4.443,0,0,0,7,1.62V0H5V1.62A4.443,4.443,0,0,0,3.613,2.2L2.464,1.05,1.05,2.464,2.2,3.613A4.443,4.443,0,0,0,1.62,5H0V7H1.62A4.443,4.443,0,0,0,2.2,8.387L1.05,9.536,2.464,10.95,3.613,9.8A4.443,4.443,0,0,0,5,10.38V12H7V10.38A4.443,4.443,0,0,0,8.387,9.8L9.536,10.95,10.95,9.536,9.8,8.387A4.443,4.443,0,0,0,10.38,7H12V5H10.38A4.443,4.443,0,0,0,9.8,3.613ZM6,8A2,2,0,1,1,8,6,2,2,0,0,1,6,8Z"></path></svg></a>
+                    </div>
+                  </div>
+                  <div class="variables__item">
+                    <div class="variables__icon"></div>
+                    <div>Business Date <span class="variables__version">1.0</span></div>
+                    <div class="variables__drag"></div>
+                    <div class="variables__actions">
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" style="transform: rotate(180deg);"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                      <span></span>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><path d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M9,12H7V7h2V12z M8,6C7.4,6,7,5.6,7,5s0.4-1,1-1 s1,0.4,1,1S8.6,6,8,6z"></path></svg></a>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M9.8,3.613,10.95,2.464,9.536,1.05,8.387,2.2A4.443,4.443,0,0,0,7,1.62V0H5V1.62A4.443,4.443,0,0,0,3.613,2.2L2.464,1.05,1.05,2.464,2.2,3.613A4.443,4.443,0,0,0,1.62,5H0V7H1.62A4.443,4.443,0,0,0,2.2,8.387L1.05,9.536,2.464,10.95,3.613,9.8A4.443,4.443,0,0,0,5,10.38V12H7V10.38A4.443,4.443,0,0,0,8.387,9.8L9.536,10.95,10.95,9.536,9.8,8.387A4.443,4.443,0,0,0,10.38,7H12V5H10.38A4.443,4.443,0,0,0,9.8,3.613ZM6,8A2,2,0,1,1,8,6,2,2,0,0,1,6,8Z"></path></svg></a>
+                    </div>
+                  </div>
+                  <div class="variables__item">
+                    <div class="variables__icon variables__icon--alt"></div>
+                    <div>Business Loan <span class="variables__version">2.0</span></div>
+                    <div class="variables__actions">
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" style="transform: rotate(180deg);"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                      <span></span>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><path d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M9,12H7V7h2V12z M8,6C7.4,6,7,5.6,7,5s0.4-1,1-1 s1,0.4,1,1S8.6,6,8,6z"></path></svg></a>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M9.8,3.613,10.95,2.464,9.536,1.05,8.387,2.2A4.443,4.443,0,0,0,7,1.62V0H5V1.62A4.443,4.443,0,0,0,3.613,2.2L2.464,1.05,1.05,2.464,2.2,3.613A4.443,4.443,0,0,0,1.62,5H0V7H1.62A4.443,4.443,0,0,0,2.2,8.387L1.05,9.536,2.464,10.95,3.613,9.8A4.443,4.443,0,0,0,5,10.38V12H7V10.38A4.443,4.443,0,0,0,8.387,9.8L9.536,10.95,10.95,9.536,9.8,8.387A4.443,4.443,0,0,0,10.38,7H12V5H10.38A4.443,4.443,0,0,0,9.8,3.613ZM6,8A2,2,0,1,1,8,6,2,2,0,0,1,6,8Z"></path></svg></a>
+                    </div>
+                  </div>
+                  <div class="variables__item">
+                    <div class="variables__icon"></div>
+                    <div>Call Put <span class="variables__version">3.0</span></div>
+                    <div class="variables__drag"></div>
+                    <div class="variables__actions">
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" style="transform: rotate(180deg);"><polygon points="6,7 0,7 0,9 6,9 6,12 10,8 6,4 "></polygon><path d="M15,16H1c-0.552,0-1-0.448-1-1v-4h2v3h12V2H2v3H0V1c0-0.552,0.448-1,1-1h14c0.552,0,1,0.448,1,1v14 C16,15.552,15.552,16,15,16z"></path></svg></a>
+                      <span></span>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><path d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M9,12H7V7h2V12z M8,6C7.4,6,7,5.6,7,5s0.4-1,1-1 s1,0.4,1,1S8.6,6,8,6z"></path></svg></a>
+                      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M9.8,3.613,10.95,2.464,9.536,1.05,8.387,2.2A4.443,4.443,0,0,0,7,1.62V0H5V1.62A4.443,4.443,0,0,0,3.613,2.2L2.464,1.05,1.05,2.464,2.2,3.613A4.443,4.443,0,0,0,1.62,5H0V7H1.62A4.443,4.443,0,0,0,2.2,8.387L1.05,9.536,2.464,10.95,3.613,9.8A4.443,4.443,0,0,0,5,10.38V12H7V10.38A4.443,4.443,0,0,0,8.387,9.8L9.536,10.95,10.95,9.536,9.8,8.387A4.443,4.443,0,0,0,10.38,7H12V5H10.38A4.443,4.443,0,0,0,9.8,3.613ZM6,8A2,2,0,1,1,8,6,2,2,0,0,1,6,8Z"></path></svg></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        
+        <section id="typography" class="uikit__section">
+          <div class="uikit__subsection">
+            <div class="uikit__wysiwyg">
+              <h1>Typography</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+          
+          <div id="typography-headings" class="uikit__subsection">
+            <div class="uikit__wysiwyg">
+              <h2>Headings</h2>
+              <p>All HTML headings, <code>h1</code> through <code>h6</code>, are available.</p>
+            </div>
+            <div class="uikit__example">
+              <h1>H1 heading</h1>
+              <h2>H2 heading</h2>
+              <h3>H3 heading</h3>
+              <h4>H4 heading</h4>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            
+            <div class="uikit__wysiwyg">
+              <p>Also there are <code>.h1</code> through <code>.h4</code> classes available, for when you want to match the font styling of a heading but cannot use the associated HTML element.</p>
+            </div>
+            <div class="uikit__example">
+              <div class="h1">H1 heading</div>
+              <div class="h2">H2 heading</div>
+              <div class="h3">H3 heading</div>
+              <div class="h4">H4 heading</div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+          </div>
+          
+          <div id="typography-paragraphs" class="uikit__subsection">
+            <div class="uikit__wysiwyg">
+              <h2>Paragraphs</h2>
+              <p>There are 4 different sizes for the paragraphs.</p>
+            </div>
+            <div class="uikit__example">
+              <p>Paragraph</p>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+          </div>
+                    
+          <div id="typography-colors" class="uikit__subsection">
+            <div class="uikit__wysiwyg">
+              <h2>Colors</h2>
+            </div>
+            <div class="uikit__example">
+              <p>Default text color.</p>
+              <br>
+              <p class="tc--light">Light text color.</p>
+              <br>
+              <p class="tc--primary">Primary color.</p>
+              <br>
+              <p class="tc--secondary">Secondary color.</p>
+              <br>
+              <p class="tc--error">Error color.</p>
+              <br>
+              <p class="tc--success">Success color.</p>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+          </div>
+        </section>
+        
+        
+        <section id="form" class="uikit__section">
+          <div id="form-input" class="uikit__subsection">
+            <div class="uikit__wysiwyg">
+              <h2>Input field</h2>
+              <p>Default text input.</p>
+            </div>
+            <div class="uikit__example">
+              <input type="text" class="form-input">
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            
+            <div class="uikit__wysiwyg">
+              <h3>Disabled state</h3>
+              <p>Text input has a disabled attribute which removes hover and focus states.</p>
+            </div>
+            <div class="uikit__example">
+              <input type="text" disabled class="form-input">
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            
+            <div class="uikit__wysiwyg">
+              <h3>Invalid state</h3>
+              <p>Text input has an invalid state to visually indicate validation error.</p>
+            </div>
+            <div class="uikit__example">
+              <input type="text" class="form-input form-input--invalid">
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            
+            <div class="uikit__wysiwyg">
+              <h3>Placeholder</h3>
+              <p>Usage of the placeholder attribute.</p>
+            </div>
+            <div class="uikit__example">
+              <input type="text" placeholder="Placeholder" class="form-input">
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+          </div>
+          
+          <div id="form-select" class="uikit__subsection">
+            <div class="uikit__wysiwyg">
+              <h2>Select field</h2>
+              <p>Default select element.</p>
+            </div>
+            <div class="uikit__example">
+              <select class="form-select">
+                <option value="" selected disabled></option>
+                <option value="">Consectetur adipisicing</option>
+                <option value="">Dolore magna aliqua</option>
+              </select>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            
+            <div class="uikit__wysiwyg">
+              <h3>Disabled state</h3>
+              <p>Select field has a disabled attribute which removes hover and focus states.</p>
+            </div>
+            <div class="uikit__example">
+              <select disabled class="form-select">
+                <option value="" selected disabled></option>
+                <option value="">Consectetur adipisicing</option>
+                <option value="">Dolore magna aliqua</option>
+              </select>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            
+            <div class="uikit__wysiwyg">
+              <h2>Invalid state</h2>
+              <p>Select field has an invalid state to visually indicate validation error.</p>
+            </div>
+            <div class="uikit__example">
+              <select class="form-select form-select--invalid">
+                <option value="" selected disabled></option>
+                <option value="">Consectetur adipisicing</option>
+                <option value="">Dolore magna aliqua</option>
+              </select>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+          </div>
+          
+          <div id="form-textarea" class="uikit__subsection">
+            <div class="uikit__wysiwyg">
+              <h2>Textarea field</h2>
+              <p>Default textarea field.</p>
+            </div>
+            <div class="uikit__example">
+              <textarea rows="7" cols="7" class="form-textarea"></textarea>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            
+            <div class="uikit__wysiwyg">
+              <h3>Disabled state</h3>
+              <p>Textarea has a disabled attribute which removes hover and focus states.</p>
+            </div>
+            <div class="uikit__example">
+              <textarea rows="7" cols="7" disabled class="form-textarea"></textarea>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            
+            <div class="uikit__wysiwyg">
+              <h3>Invalid state</h3>
+              <p>Textarea has an invalid state to visually indicate validation error.</p>
+            </div>
+            <div class="uikit__example">
+              <textarea rows="7" cols="7" class="form-textarea form-textarea--invalid"></textarea>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            
+            <div class="uikit__wysiwyg">
+              <h3>Placeholder</h3>
+              <p>Usage of the placeholder attribute.</p>
+            </div>
+            <div class="uikit__example">
+              <textarea rows="7" cols="7" placeholder="Placeholder" class="form-textarea"></textarea>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+          </div>
+          
+          <div id="form-radio" class="uikit__subsection">
+            <div class="uikit__wysiwyg">
+              <h2>Radio button</h2>
+              <p>Default radio button.</p>
+            </div>
+            <div class="uikit__example">
+              <div class="form-radio">
+                <input type="radio" name="radio" class="form-radio__input">
+                <label class="form-radio__label">Consectetur adipisicing</label>
+                <span class="form-radio__icon"></span>
+              </div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            
+            <div class="uikit__wysiwyg">
+              <h3>Group</h3>
+              <p>By default radio buttons have the 100% width like the other form elements. With help of the flexbox grid they could be grouped in a horizontal row.</p>
+            </div>
+            <div class="uikit__example">
+              <div class="grid-row">
+                <div class="grid-col grid-col--auto">
+                  <div class="form-radio">
+                    <input type="radio" name="radio" class="form-radio__input">
+                    <label class="form-radio__label">Consectetur adipisicing</label>
+                    <span class="form-radio__icon"></span>
+                  </div>
+                </div>
+                <div class="grid-col grid-col--auto">
+                  <div class="form-radio">
+                    <input type="radio" name="radio" class="form-radio__input">
+                    <label class="form-radio__label">Dolore magna aliqua</label>
+                    <span class="form-radio__icon"></span>
+                  </div>
+                </div>
+                <div class="grid-col grid-col--auto">
+                  <div class="form-radio">
+                    <input type="radio" name="radio" class="form-radio__input">
+                    <label class="form-radio__label">Lorem ipsum dolore</label>
+                    <span class="form-radio__icon"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+          </div>
+          
+          <div id="form-checkbox" class="uikit__subsection">
+            <div class="uikit__wysiwyg">
+              <h2>Checkbox</h2>
+              <p>Default checkbox button.</p>
+            </div>
+            <div class="uikit__example">
+              <div class="form-checkbox">
+                <input type="checkbox" name="checkbox" class="form-checkbox__input">
+                <label class="form-checkbox__label">Consectetur adipisicing</label>
+                <span class="form-checkbox__icon"></span>
+              </div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            
+            <div class="uikit__wysiwyg">
+              <h3>Group</h3>
+              <p>By default checkboxes have the 100% width like the other form elements. With help of the flexbox grid they could be grouped in a horizontal row.</p>
+            </div>
+            <div class="uikit__example">
+              <div class="grid-row">
+                <div class="grid-col grid-col--auto">
+                  <div class="form-checkbox">
+                    <input type="checkbox" class="form-checkbox__input">
+                    <label class="form-checkbox__label">Consectetur adipisicing</label>
+                    <span class="form-checkbox__icon"></span>
+                  </div>
+                </div>
+                <div class="grid-col grid-col--auto">
+                  <div class="form-checkbox">
+                    <input type="checkbox" class="form-checkbox__input">
+                    <label class="form-checkbox__label">Dolore magna aliqua</label>
+                    <span class="form-checkbox__icon"></span>
+                  </div>
+                </div>
+                <div class="grid-col grid-col--auto">
+                  <div class="form-checkbox">
+                    <input type="checkbox" class="form-checkbox__input">
+                    <label class="form-checkbox__label">Lorem ipsum dolore</label>
+                    <span class="form-checkbox__icon"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+          </div>
+          
+          <div id="form-buttons" class="uikit__subsection">
+            <div class="uikit__wysiwyg">
+              <h2>Buttons</h2>
+              <p>UI kit includes several predefined button styles, each serving its own semantic purpose, with a few extras thrown in for more control.</p>
+            </div>
+            <div class="uikit__example">
+              <div class="grid-row grid-row--aic">
+                <div class="grid-col grid-col--auto">
+                  <button type="button" class="button">Default Button</button>
+                </div>
+                <div class="grid-col grid-col--auto">
+                  <button type="button" class="button button--primary">Primary Button</button>
+                </div>
+              </div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            
+            <div class="uikit__wysiwyg">
+              <h3>Disabled state</h3>
+              <p>All buttons have disabled attribute witch removes hover and focus states.</p>
+            </div>
+            <div class="uikit__example">
+              <div class="grid-row grid-row--aic">
+                <div class="grid-col grid-col--auto">
+                  <button type="button" disabled class="button">Default Button</button>
+                </div>
+                <div class="grid-col grid-col--auto">
+                  <button type="button" disabled class="button button--primary">Primary Button</button>
+                </div>
+              </div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+          </div>
+        </section>
+        
+        
+        <section id="components" class="uikit__section">
+          <div id="components-alerts" class="uikit__subsection">
+            <div class="uikit__wysiwyg">
+              <h2>Alerts</h2>
+              <p>Provide contextual feedback messages for typical user actions with the handful of available and flexible messages.</p>
+            </div>
+            <div class="uikit__example">
+              <div class="alert"><svg width="12" height="12"><path fill-rule="evenodd" d="M6 0a6 6 0 100 12A6 6 0 006 0zm0 9.83c-.469 0-.79-.362-.79-.83 0-.482.334-.83.79-.83.482 0 .79.348.79.83 0 .469-.308.83-.79.83zm.311-3.17c-.12.408-.496.415-.621 0-.145-.477-.659-2.292-.659-3.47 0-1.556 1.946-1.563 1.946 0 0 1.185-.541 3.046-.666 3.47z"/></svg>System notification message.</div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            <div class="uikit__example">
+              <div class="alert alert--error"><svg width="12" height="12"><path fill-rule="evenodd" d="M6 0a6 6 0 100 12A6 6 0 006 0zm0 9.83c-.469 0-.79-.362-.79-.83 0-.482.334-.83.79-.83.482 0 .79.348.79.83 0 .469-.308.83-.79.83zm.311-3.17c-.12.408-.496.415-.621 0-.145-.477-.659-2.292-.659-3.47 0-1.556 1.946-1.563 1.946 0 0 1.185-.541 3.046-.666 3.47z"/></svg>System error message.</div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+            <div class="uikit__example">
+              <div class="alert alert--success"><svg width="12" height="12"><path fill-rule="evenodd" d="M6 0a6 6 0 100 12A6 6 0 006 0zm0 9.83c-.469 0-.79-.362-.79-.83 0-.482.334-.83.79-.83.482 0 .79.348.79.83 0 .469-.308.83-.79.83zm.311-3.17c-.12.408-.496.415-.621 0-.145-.477-.659-2.292-.659-3.47 0-1.556 1.946-1.563 1.946 0 0 1.185-.541 3.046-.666 3.47z"/></svg>System success message.</div>
+            </div>
+            <pre class="uikit__source"><code></code></pre>
+          </div>
+          
+          <div id="components-authorization" class="uikit__subsection">
+            <div class="uikit__wysiwyg">
+              <h2>Authorization</h2>
+            </div>
+            <div class="uikit__example">
+              <div class="login">
+                <div><img src="img/logo.svg" alt="" class="login__logo"></div>
+                <div><img src="img/logo-caption.svg" alt="" class="login__logo-caption"></div>
+                <form action="#" class="login__form">
+                  <label class="form-label login__label">Email Address</label>
+                  <input type="text" placeholder="Enter your email address" class="form-input form-input--large login__input">
+                  <label class="form-label login__label">Password</label>
+                  <input type="password" placeholder="Enter password" class="form-input form-input--large login__input">
+                  <div class="grid-row grid-row--jcb">
+                    <div class="grid-col grid-col--auto">
+                      <div class="form-checkbox">
+                        <input type="checkbox" name="checkbox" class="form-checkbox__input">
+                        <label class="form-checkbox__label">Remember Me</label>
+                        <span class="form-checkbox__icon"></span>
+                      </div>
+                    </div>
+                    <div class="grid-col grid-col--auto">
+                      <a href="#" class="text-link tc--light">Forgot Password</a>
+                    </div>
+                  </div>
+                  <button type="submit" class="mt--250 button button--large button--primary">Log In</button>
+                </form>
+              </div>
+            </div>
+            <div class="uikit__example">
+              <div class="login">
+                <div><img src="img/logo.svg" alt="" class="login__logo"></div>
+                <div><img src="img/logo-caption.svg" alt="" class="login__logo-caption"></div>
+                <form action="#" class="login__form">
+                  <div class="alert alert--error login__alert"><svg width="12" height="12"><path fill-rule="evenodd" d="M6 0a6 6 0 100 12A6 6 0 006 0zm0 9.83c-.469 0-.79-.362-.79-.83 0-.482.334-.83.79-.83.482 0 .79.348.79.83 0 .469-.308.83-.79.83zm.311-3.17c-.12.408-.496.415-.621 0-.145-.477-.659-2.292-.659-3.47 0-1.556 1.946-1.563 1.946 0 0 1.185-.541 3.046-.666 3.47z"></path></svg>Incorrect password. Please try again.</div>
+                  <label class="form-label login__label">Email Address</label>
+                  <input type="text" placeholder="Enter your email address" value="someemail@gmail.com" class="form-input form-input--large login__input">
+                  <label class="form-label login__label">Password</label>
+                  <input type="password" placeholder="Enter password" value="somepassword" class="form-input form-input--large form-input--invalid login__input">
+                  <div class="grid-row grid-row--jcb">
+                    <div class="grid-col grid-col--auto">
+                      <div class="form-checkbox">
+                        <input type="checkbox" name="checkbox" class="form-checkbox__input">
+                        <label class="form-checkbox__label">Remember Me</label>
+                        <span class="form-checkbox__icon"></span>
+                      </div>
+                    </div>
+                    <div class="grid-col grid-col--auto">
+                      <a href="#" class="text-link tc--light">Forgot Password</a>
+                    </div>
+                  </div>
+                  <button type="submit" disabled class="mt--250 button button--large button--primary">Log In</button>
+                </form>
+              </div>
+            </div>
+            <div class="uikit__example">
+              <div class="login">
+                <div><img src="img/logo.svg" alt="" class="login__logo"></div>
+                <div><img src="img/logo-caption.svg" alt="" class="login__logo-caption"></div>
+                <h1>Reset Password</h1>
+                <p class="mt--050 login__subtitle">Please enter the email address you use to log in to your account. We will send you an email with instructions on how to reset your password.</p>
+                <form action="#" class="login__form">
+                  <label class="form-label login__label">Email Address</label>
+                  <input type="text" placeholder="Enter your email address" value="someemail@gmail.com" class="form-input form-input--large login__input">
+                  <div class="mt--150 grid-row">
+                    <div class="grid-col">
+                      <a href="#" class="mt--100 button button--large">Back to Log In</a>
+                    </div>
+                    <div class="grid-col">
+                      <button type="submit" class="mt--100 button button--large button--primary">Send Email</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="uikit__example">
+              <div class="login">
+                <div><img src="img/logo.svg" alt="" class="login__logo"></div>
+                <div><img src="img/logo-caption.svg" alt="" class="login__logo-caption"></div>
+                <img src="img/login/check@2x.png" width="39" height="39" alt="">
+                <h1 class="mt--050">Email Sent</h1>
+                <p class="mt--050 login__subtitle">Please follow the instructions in the email we sent to you to reset your password. If you don’t see the email in your inbox, make sure to check the Spam folder.</p>
+                <form action="#" class="login__form">
+                  <div class="mt--150 grid-row">
+                    <div class="grid-col">
+                      <a href="#" class="mt--100 button button--large">Back to Log In</a>
+                    </div>
+                    <div class="grid-col">
+                      <button type="submit" class="mt--100 button button--large button--primary">Send Email</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        
+        <section id="colors" class="uikit__section active">
+            <div class="uikit__subsection">
+              <div class="uikit__wysiwyg">
+                <table class="p">
+                  <thead>
+                    <tr>
+                      <th width="1%"></th>
+                      <th>Name</th>
+                      <th>HEX</th>
+                      <th>RGBA</th>
+                      <th>Usage</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><div class="uikit__color" style="background-color: #1E9EFF"></div></td>
+                      <td>Primary</td>
+                      <td>#1E9EFF</td>
+                      <td>rgba(30,158,255,1)</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><div class="uikit__color" style="background-color: #CC4434"></div></td>
+                      <td>Error</td>
+                      <td>#CC4434</td>
+                      <td></td>
+                      <td>
+                        <ul>
+                          <li>Error alert bg color</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><div class="uikit__color" style="background-color: #FE6553"></div></td>
+                      <td>Invalid</td>
+                      <td>#FE6553</td>
+                      <td></td>
+                      <td>
+                        <ul>
+                          <li>Invalid input border color</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><div class="uikit__color" style="background-color: #139959"></div></td>
+                      <td>Success</td>
+                      <td>#139959</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td colspan="5"></td>
+                    </tr>
+                    <tr>
+                      <td><div class="uikit__color" style="background-color: #FFFFFF"></div></td>
+                      <td>White</td>
+                      <td>#FFFFFF</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><div class="uikit__color" style="background-color: #F0F0F0"></div></td>
+                      <td></td>
+                      <td>#F0F0F0</td>
+                      <td></td>
+                      <td>
+                        <ul>
+                          <li>Input text color</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><div class="uikit__color" style="background-color: #DFDFDF"></div></td>
+                      <td></td>
+                      <td>#DFDFDF</td>
+                      <td></td>
+                      <td>
+                        <ul>
+                          <li>Body text color</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><div class="uikit__color" style="background-color: #9EA8B2"></div></td>
+                      <td></td>
+                      <td>#9EA8B2</td>
+                      <td></td>
+                      <td>
+                        <ul>
+                          <li>Actions nav labels</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><div class="uikit__color" style="background-color: #798591"></div></td>
+                      <td></td>
+                      <td>#798591</td>
+                      <td></td>
+                      <td>
+                        <ul>
+                          <li>Input placeholder color</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><div class="uikit__color" style="background-color: #54616A"></div></td>
+                      <td></td>
+                      <td>#54616A</td>
+                      <td></td>
+                      <td>
+                        <ul>
+                          <li>Sidebar nav icon color</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><div class="uikit__color" style="background-color: #1B1E22"></div></td>
+                      <td></td>
+                      <td>#1B1E22</td>
+                      <td></td>
+                      <td>
+                        <ul>
+                          <li>Login bg color</li>
+                          <li>Header bg color</li>
+                          <li>Sidebar bg color</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><div class="uikit__color" style="background-color: #131619"></div></td>
+                      <td></td>
+                      <td>#131619</td>
+                      <td></td>
+                      <td>
+                        <ul>
+                          <li>Input bg color</li>
+                          <li>Body dots bg color</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><div class="uikit__color" style="background-color: #101215"></div></td>
+                      <td></td>
+                      <td>#101215</td>
+                      <td></td>
+                      <td>
+                        <ul>
+                          <li>Overhead bg color</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><div class="uikit__color" style="background-color: #090D11"></div></td>
+                      <td></td>
+                      <td>#090D11</td>
+                      <td></td>
+                      <td>
+                        <ul>
+                          <li>Body bg color</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="5"></td>
+                    </tr>
+                    <tr>
+                      <td><div class="uikit__color" style="background: linear-gradient(#0087DF, #0064AD)"></div></td>
+                      <td></td>
+                      <td colspan="2">#0087DF, #0064AD</td>
+                      <td>
+                        <ul>
+                          <li>Checked radio bg gradient</li>
+                          <li>Checked checkbox bg gradient</li>
+                          <li>Primary button bg gradient</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><div class="uikit__color" style="background: linear-gradient(#2F343A, #292F34)"></div></td>
+                      <td></td>
+                      <td colspan="2">#2F343A, #292F34</td>
+                      <td>
+                        <ul>
+                          <li>Select bg gradient</li>
+                          <li>Radio bg gradient</li>
+                          <li>Checkbox bg gradient</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><div class="uikit__color" style="background: linear-gradient(#FFFFFF, #DFDFDF);"></div></td>
+                      <td></td>
+                      <td colspan="2">#FFFFFF, #DFDFDF</td>
+                      <td>
+                        <ul>
+                          <li>Toggle handle bg gradient</li>
+                        </ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+        </section>
+      </main>
+      
+      <aside class="uikit__side">
+        <img src="img/logo.svg" alt="" class="uikit__logo">
+        
+        <div class="uikit__menu">
+          <a href="#" data-section-open="#bem">BEM naming</a>
+          <div class="uikit__submenu">
+            <a href="#bem-block">Block</a>
+            <a href="#bem-element">Element</a>
+            <a href="#bem-modifier">Modifier</a>
+          </div>
+          
+          <a href="#" data-section-open="#grid" class="">Flexbox grid</a>
+          <div class="uikit__submenu">
+            <a href="#grid-rows-and-cols">Rows and columns</a>
+            <a href="#grid-var-width-content">Variable width content</a>
+            <a href="#grid-vertical-alignment">Vertical alignment</a>
+            <a href="#grid-horizontal-alignment">Horizontal alignment</a>
+            <a href="#grid-disabled-gutters">Disabled and small gutters</a>
+          </div>
+          
+          <a href="#" data-section-open="#page" class="active">Page layout</a>
+          <div class="uikit__submenu">
+            <a href="#page-overhead">Overhead</a>
+            <a href="#page-header">Header</a>
+            <a href="#page-sidebar">Sidebar</a>
+          </div>
+          
+          <a href="#" data-section-open="#typography">Typography</a>
+          <div class="uikit__submenu">
+            <a href="#typography-headings">Headings</a>
+            <a href="#typography-paragraphs">Paragraphs</a>
+            <a href="#typography-colors">Colors</a>
+          </div>
+          
+          <a href="#" data-section-open="#form">Form elements</a>
+          <div class="uikit__submenu">
+            <a href="#form-input">Input</a>
+            <a href="#form-select">Select</a>
+            <a href="#form-textarea">Textarea</a>
+            <a href="#form-radio">Radio</a>
+            <a href="#form-checkbox">Checkbox</a>
+            <a href="#form-buttons">Buttons</a>
+          </div>
+          
+          <a href="#" data-section-open="#components">Components</a>
+          <div class="uikit__submenu">
+            <a href="#components-alerts">Alerts</a>
+            <a href="#components-authorization">Authorization</a>
+          </div>
+          
+          <a href="#" data-section-open="#colors">Colors</a>
+        </div>
+      </aside>
+    </div>
+    
+    <script src="js/jquery-3.5.1.min.js"></script><!-- scripts only for the ui kit (should not be used on production) -->
+    <script src="js/ui.js"></script>
+    <script>
+
+    </script>
+  </body>
+</html>
